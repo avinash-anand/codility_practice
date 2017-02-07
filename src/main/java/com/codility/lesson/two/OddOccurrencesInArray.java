@@ -6,8 +6,12 @@
  * 
  * For example, in array A such that:
  * 
- * A[0] = 9  A[1] = 3  A[2] = 9
- * A[3] = 3  A[4] = 9  A[5] = 7
+ * A[0] = 9  
+ * A[1] = 3  
+ * A[2] = 9
+ * A[3] = 3  
+ * A[4] = 9  
+ * A[5] = 7
  * A[6] = 9
  * the elements at indexes 0 and 2 have value 9,
  * the elements at indexes 1 and 3 have value 3,
@@ -21,8 +25,12 @@
  * 
  * For example, given array A such that:
  * 
- * A[0] = 9  A[1] = 3  A[2] = 9
- * A[3] = 3  A[4] = 9  A[5] = 7
+ * A[0] = 9  
+ * A[1] = 3  
+ * A[2] = 9
+ * A[3] = 3  
+ * A[4] = 9  
+ * A[5] = 7
  * A[6] = 9
  * the function should return 7, as explained in the example above.
  * 
@@ -43,11 +51,21 @@ package com.codility.lesson.two;
 
 public class OddOccurrencesInArray {
 	public static void main(String[] args) {
-		
+		OddOccurrencesInArray o = new OddOccurrencesInArray();
+		int[] t1 = { 1, 2, 3, 4, 3, 2, 1 };
+		int[] t2 = { 1, 1, 2, 2, 3, 3, 4, 4, 5 };
+		System.out.println(0^1^2^3^4^5^6^5^4^3^1^2);
+		System.out.println(0^1^2^3^4^5^6^7^5^4^3^1^2^7);
+		System.out.println(o.soultion(t1));
+		System.out.println(o.soultion(t2));
 	}
-	
+
 	public int soultion(int[] A) {
-		return 0;
+		int requiredNum = 0;
+		for (int i = 0; i < A.length; i++) {
+			requiredNum ^= A[i]; 
+		}
+		return requiredNum;
 	}
-	
+
 }
